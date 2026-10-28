@@ -89,8 +89,8 @@ export class ApifyScraper {
   async scrapeYouTubeChannel(apiToken: string, channelUrl: string, maxVideos = 10): Promise<ScrapeResult> {
     return this.runActor({
       apiToken,
-      actorId: "bernardo/youtube-scraper",
-      input: { startUrls: [{ url: channelUrl }], maxResults: maxVideos },
+      actorId: "johnvc~YoutubeTranscripts",
+      input: { channel: channelUrl, max_videos: maxVideos },
     });
   }
 
